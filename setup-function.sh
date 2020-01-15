@@ -7,8 +7,8 @@ planname="ase-function-plan"
 storageaccountname="asefunctionstorage"
 functionname="mffunction"
 
-# az appservice plan create -g $resourcegroup -n $planname \
-#     --app-service-environment $asename --sku I1
+az appservice plan create -g $resourcegroup -n $planname \
+    --app-service-environment $asename --sku I1
 
 #create a storage account (connected to vnet)
 
