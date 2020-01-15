@@ -1,3 +1,6 @@
 Network rules for ASE internal
 https://docs.microsoft.com/en-gb/azure/app-service/environment/network-info#network-security-groups
 https://docs.microsoft.com/en-gb/azure/azure-functions/functions-recover-storage-account
+
+
+ 

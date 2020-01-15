@@ -1,0 +1,28 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "existingFunctionAppName" : {
+            "type": "string",
+            "defaultValue": "mffunction"
+        },
+        "functionName" : {
+            "type": "string",
+            "defaultValue":"Function1"
+        }
+    },
+    "variables":{
+        "functionAppId": "[concat(resourceGroup().id,'/providers/Microsoft.Web/sites/', parameters('existingFunctionAppName'))]"
+    },
+    "resources":[],
+    "outputs": {
+        "HostKeys": {
+            "type": "object",
+            "value" : "[listkeys(concat(variables('functionAppId'), '/host/default/'),'2016-08-01')]"
+        },
+        "FunctionKeys": {
+            "type": "object",
+            "value" : "[listkeys(concat(variables('functionAppId'), '/functions/', parameters('functionName')),'2016-08-01')]"
+        }
+    }
+}
